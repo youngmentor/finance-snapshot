@@ -8,6 +8,7 @@ import {
 } from './components';
 import { useFinanceData, useMonthlyStats } from './hooks';
 import { Toaster } from 'react-hot-toast';
+import { formatCurrency } from './lib/utils';
 
 function App() {
   const {
@@ -103,10 +104,10 @@ function App() {
                   <div className="clean-card p-6 text-center">
                     <div className="text-sm font-medium text-slate-500 uppercase tracking-wider mb-2">Average Transaction</div>
                     <div className="text-2xl font-bold text-slate-800">
-                      ₦{(
+                      {formatCurrency(
                         (totalIncome + totalExpenses) /
                         monthTransactions.length
-                      ).toFixed(2)}
+                      )}
                     </div>
                   </div>
                   <div className="clean-card p-6 text-center">

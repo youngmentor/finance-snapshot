@@ -1,5 +1,6 @@
 import type { Category, CategorySpendingProps } from '../types';
 import { CATEGORY_METADATA } from '../types';
+import { formatCurrency } from '../lib/utils';
 
 export const CategorySpending = ({
     expensesByCategory,
@@ -42,7 +43,7 @@ export const CategorySpending = ({
                                     <span className="font-semibold text-slate-700">{meta.label}</span>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <span className="font-bold tracking-wide text-slate-800">₦{amount.toFixed(2)}</span>
+                                    <span className="font-bold tracking-wide text-slate-800">{formatCurrency(amount)}</span>
                                     <span className="text-sm text-slate-500 font-medium w-12 text-right">{(percentage).toFixed(1)}%</span>
                                 </div>
                             </div>
@@ -70,7 +71,7 @@ export const CategorySpending = ({
                     <div className="bg-slate-50 rounded-xl p-4 flex-1 text-right">
                         <span className="text-slate-500 text-sm font-semibold block mb-1 uppercase tracking-wider">Total spend</span>
                         <strong className="text-2xl font-bold text-slate-800">
-                            ₦{totalExpenses.toFixed(2)}
+                            {formatCurrency(totalExpenses)}
                         </strong>
                     </div>
                 </div>

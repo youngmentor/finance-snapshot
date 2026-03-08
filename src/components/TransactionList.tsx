@@ -1,6 +1,6 @@
 import type { TransactionListProps } from '../types';
 import { CATEGORY_METADATA } from '../types';
-import { cn } from '../lib/utils';
+import { cn, formatCurrency } from '../lib/utils';
 import { toast } from 'react-hot-toast';
 
 export const TransactionList = ({
@@ -82,7 +82,7 @@ export const TransactionList = ({
                                     "font-bold text-xl tracking-tight",
                                     isIncome ? "text-emerald-600" : "text-rose-600"
                                 )}>
-                                    {isIncome ? '+' : '-'}₦{transaction.amount.toFixed(2)}
+                                    {isIncome ? '+' : '-'}{formatCurrency(transaction.amount)}
                                 </span>
                                 <button
                                     className="p-2.5 rounded-xl transition-all text-slate-400 hover:bg-rose-50 hover:text-rose-600 group-hover:opacity-100 sm:opacity-0"

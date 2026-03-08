@@ -1,5 +1,5 @@
 import type { SummaryProps } from '../types';
-import { cn } from '../lib/utils';
+import { cn, formatCurrency } from '../lib/utils';
 
 export const Summary = ({
     totalIncome,
@@ -40,7 +40,7 @@ export const Summary = ({
                         </div>
                     </div>
                     <div className="text-2xl font-bold text-slate-800 relative z-10">
-                        ₦{totalIncome.toFixed(2)}
+                        {formatCurrency(totalIncome)}
                     </div>
                 </div>
 
@@ -52,7 +52,7 @@ export const Summary = ({
                         </div>
                     </div>
                     <div className="text-2xl font-bold text-slate-800 relative z-10">
-                        ₦{totalExpenses.toFixed(2)}
+                        {formatCurrency(totalExpenses)}
                     </div>
                 </div>
 
@@ -73,7 +73,7 @@ export const Summary = ({
                         "text-2xl font-bold relative z-10",
                         balance >= 0 ? "text-emerald-600" : "text-rose-600"
                     )}>
-                        ₦{Math.abs(balance).toFixed(2)}
+                        {formatCurrency(Math.abs(balance))}
                         {balance < 0 && <span className="text-sm font-normal ml-2 opacity-70">(Deficit)</span>}
                     </div>
                 </div>
