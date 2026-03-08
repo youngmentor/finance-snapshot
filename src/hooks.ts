@@ -5,36 +5,34 @@ const TRANSACTIONS_KEY = 'finance_transactions';
 const BUDGETS_KEY = 'finance_budgets';
 
 export const useFinanceData = () => {
-    const [transactions, setTransactions] = useState<Transaction[]>([]);
-    const [budgets, setBudgets] = useState<Budget[]>([]);
-
-    // Load from localStorage
-    useEffect(() => {
+    const [transactions, setTransactions] = useState<Transaction[]>(() => {
         const stored = localStorage.getItem(TRANSACTIONS_KEY);
         if (stored) {
             try {
-                setTransactions(JSON.parse(stored));
+                return JSON.parse(stored);
             } catch {
                 console.error('Failed to parse transactions');
             }
         }
-
+        return [];
+    });
+    
+    const [budgets, setBudgets] = useState<Budget[]>(() => {
         const storedBudgets = localStorage.getItem(BUDGETS_KEY);
         if (storedBudgets) {
             try {
-                setBudgets(JSON.parse(storedBudgets));
+                return JSON.parse(storedBudgets);
             } catch {
                 console.error('Failed to parse budgets');
             }
         }
-    }, []);
+        return [];
+    });
 
-    // Persist transactions
     useEffect(() => {
         localStorage.setItem(TRANSACTIONS_KEY, JSON.stringify(transactions));
     }, [transactions]);
 
-    // Persist budgets
     useEffect(() => {
         localStorage.setItem(BUDGETS_KEY, JSON.stringify(budgets));
     }, [budgets]);

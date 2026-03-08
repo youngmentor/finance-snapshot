@@ -33,7 +33,7 @@ export const CategorySpending = ({
                     const barWidth = totalExpenses > 0 ? (amount / maxAmount) * 100 : 0;
 
                     return (
-                        <div key={category} className="group animate-slide-up" style={{ animationDelay: `₦{index * 100}ms` }}>
+                        <div key={category} className="group animate-slide-up" style={{ animationDelay: `${index * 100}ms` }}>
                             <div className="flex items-center justify-between mb-2">
                                 <div className="flex items-center gap-3">
                                     <div className="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center text-lg">
@@ -49,7 +49,7 @@ export const CategorySpending = ({
                             <div className="w-full bg-slate-100 rounded-full h-2.5 overflow-hidden">
                                 <div
                                     className="h-full rounded-full transition-all duration-1000 ease-out bg-orange-400 relative overflow-hidden"
-                                    style={{ width: `₦{barWidth}%` }}
+                                    style={{ width: `${barWidth}%` }}
                                 >
                                 </div>
                             </div>

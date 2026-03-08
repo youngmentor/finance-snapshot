@@ -105,7 +105,7 @@ export const BudgetManager = ({
                         const meta = CATEGORY_METADATA[budget.category];
 
                         return (
-                            <div key={budget.category} className="clean-card bg-white hover:bg-slate-50/50 rounded-2xl p-5 border border-slate-100 transition-all animate-slide-up hover:shadow-sm" style={{ animationDelay: `₦{index * 100}ms` }}>
+                            <div key={budget.category} className="clean-card bg-white hover:bg-slate-50/50 rounded-2xl p-5 border border-slate-100 transition-all animate-slide-up hover:shadow-sm" style={{ animationDelay: `${index * 100}ms` }}>
                                 <div className="flex items-center justify-between mb-4">
                                     <div className="flex items-center gap-3">
                                         <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-xl">
@@ -138,7 +138,7 @@ export const BudgetManager = ({
                                             "h-full rounded-full transition-all duration-1000 ease-out relative overflow-hidden",
                                             budget.isOverBudget ? "bg-rose-500" : "bg-teal-500"
                                         )}
-                                        style={{ width: `₦{Math.min(budget.percentage, 100)}%` }}
+                                        style={{ width: `${Math.min(budget.percentage, 100)}%` }}
                                     >
                                     </div>
                                 </div>

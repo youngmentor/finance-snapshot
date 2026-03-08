@@ -50,9 +50,8 @@ export const TransactionList = ({
                                 "group flex flex-col sm:flex-row sm:items-center justify-between p-5 rounded-2xl transition-all duration-300 animate-slide-up relative overflow-hidden",
                                 "bg-white hover:bg-slate-50 border border-slate-100 hover:shadow-sm hover:-translate-y-0.5"
                             )}
-                            style={{ animationDelay: `₦{index * 50}ms` }}
+                            style={{ animationDelay: `${index * 50}ms` }}
                         >
-                            {/* Accent border left */}
                             <div className={cn(
                                 "absolute left-0 top-0 bottom-0 w-1",
                                 isIncome ? "bg-emerald-500" : "bg-rose-500"
