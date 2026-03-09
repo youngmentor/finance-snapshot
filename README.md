@@ -147,7 +147,7 @@ src/
 
 ##  Evaluation Criteria Coverage
 
-### Creativity & Design Thinking (30%)
+### Creativity & Design Thinking
 
  Custom color scheme with gradient headers
  Unique category icons for quick visual recognition
@@ -157,7 +157,7 @@ src/
  Delightful micro-interactions (hover effects, focus states)
  Creative use of whitespace and visual hierarchy
 
-### Code Quality (25%)
+### Code Quality
 
  TypeScript for type safety
  Custom hooks for reusable logic
@@ -167,7 +167,7 @@ src/
  DRY principles (no code duplication)
  Consistent styling approach
 
-### User Experience (25%)
+### User Experience
 
  Intuitive form with clear labels and helpful placeholders
  Immediate visual feedback when adding transactions
@@ -177,7 +177,7 @@ src/
  Clear navigation between different data views
  Budget warnings help users stay in control
 
-### Completeness (20%)
+### Completeness
 
  All core features implemented and functional
  Multiple categories for both income and expenses
